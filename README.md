@@ -5,9 +5,12 @@ This is intended to be quick and easy way to install most of the neceassary tool
 
 A few things to note:
 
-• It is common practice to install these tools on a virtual machine
-• I take no credit nor responsibility for any of these applications, how they are used or how they effect your system
-• Run with "sudo bash Pop_Shell.sh" (terminal must be open in the same directory as file)
-• A new directory "PenTools" will be created in your present working directory (where ever you run this script) for some applications and seclists
+  • It is common practice to install these tools on a virtual machine
+
+  • I take no credit nor responsibility for any of these applications, how they are used or how they effect your system
+
+  • Run with "sudo bash Pop_Shell.sh" (terminal must be open in the same directory as file)
+
+  • A new directory "PenTools" will be created in your present working directory (where ever you run this script) for some applications and seclists
 
 For any questions or suggestions, contact me at www.camcandoIT.com/contact
