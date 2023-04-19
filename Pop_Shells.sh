@@ -18,7 +18,13 @@ sudo apt-get install -y wireshark-qt
 while read -r p ; do sudo apt-get install -y $p ; done < <(cat << "EOF"
 	nmap
 	ncat
+	ncrack
+	hashcat
+	gobuster
+	medusa
+	nikto
 	wfuzz
+	tcpdump
 	sqlmap
 	dnsrecon
 	dirb
@@ -35,24 +41,24 @@ echo Creating new directory named PenTools for your applications and seclists. .
 sleep 6
 
 # create directory for your new tools
-mkdir -v PenTools &&
-cd PenTools &&
+mkdir -v PenTools
+cd PenTools
 
 # install hydra
-pip install hydra-core --upgrade &&
-sudo apt-get install hydra -y &&
+pip install hydra-core --upgrade
+sudo apt-get install hydra -y
 
 # download common seclists
-git clone https://github.com/danielmiessler/SecLists.git &&
+git clone https://github.com/danielmiessler/SecLists.git
 
 # install bloodhound
-sudo npm install -g electron-packager &&
-git clone https://github.com/BloodHoundAD/Bloodhound &&
-cd Bloodhound &&
-npm install &&
+sudo npm install -g electron-packager
+git clone https://github.com/BloodHoundAD/Bloodhound
+cd Bloodhound
+npm install
 npm run build:linux
 
 # install metasploit
-curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall &&
-chmod 755 msfinstall &&
+curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall
+chmod 755 msfinstall
 ./msfinstall
