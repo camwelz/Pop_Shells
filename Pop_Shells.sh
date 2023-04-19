@@ -16,24 +16,24 @@ sudo apt-get install -y wireshark-qt
 
 # loop to install "ez" packages
 while read -r p ; do sudo apt-get install -y $p ; done < <(cat << "EOF"
-	nmap
+	dirb
+	dnsrecon
+	gobuster
+	hashcat
+	iputils-arping
+	medusa
 	ncat
 	ncrack
-	hashcat
-	gobuster
-	medusa
 	nikto
-	wfuzz
-	tcpdump
-	sqlmap
-	dnsrecon
-	dirb
-	iputils-arping
-	openvas-scanner
-	python3-pip
-	whois
-	plocate
+	nmap
 	npm
+	openvas-scanner
+	plocate
+	python3-pip
+	sqlmap
+	tcpdump
+	wfuzz
+	whois
 EOF
 )
 
@@ -44,10 +44,6 @@ sleep 6
 mkdir -v PenTools
 cd PenTools
 
-# install hydra
-pip install hydra-core --upgrade
-sudo apt-get install hydra -y
-
 # download common seclists
 git clone https://github.com/danielmiessler/SecLists.git
 
@@ -57,6 +53,10 @@ git clone https://github.com/BloodHoundAD/Bloodhound
 cd Bloodhound
 npm install
 npm run build:linux
+
+# install hydra
+pip install hydra-core --upgrade
+sudo apt-get install hydra -y
 
 # install metasploit
 curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall
